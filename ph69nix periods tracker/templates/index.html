@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Period Tracker By ph69nix</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #fafafa; }
+    input, button { padding: 8px; margin: 4px; }
+    .box { background: white; padding: 20px; border-radius: 10px; max-width: 400px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🩸 Period Tracker</h2>
+    <form method="post">
+      <label>Enter period start date:</label><br>
+      <input type="date" name="period_date" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <h3>Logged dates:</h3>
+    <ul>
+      {% for d in dates %}
+        <li>{{ d.date() }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if message %}
+      <p><b>{{ message }}</b></p>
+    {% endif %}
+  </div>
+</body>
+</html>
